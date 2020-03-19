@@ -32,12 +32,14 @@ acc_best = 0
 if args.dataset == 'MNIST':
     
     data_train = MNIST(args.data,
+                        download=True,
                        transform=transforms.Compose([
                            transforms.Resize((32, 32)),
                            transforms.ToTensor(),
                            transforms.Normalize((0.1307,), (0.3081,))
                            ]))
     data_test = MNIST(args.data,
+                    download=True,
                       train=False,
                       transform=transforms.Compose([
                           transforms.Resize((32, 32)),
